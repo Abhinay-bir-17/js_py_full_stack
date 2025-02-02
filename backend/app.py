@@ -8,8 +8,10 @@
 this gives error, so stop the server nd do this
 set FLASK_APP=app.py(no spaces around =)
 set FLASK_ENV = development
-nd then do ' flask run'
+nd then do ' flask run' ,
+next flask run --reload
 '''
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS  
@@ -18,7 +20,7 @@ CORS(app)
 
 # friends is our db name
 app.config['SQLALCHEMY_DATABASE_URI']= "sqlite:///friends.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False   
 
 db = SQLAlchemy(app)
 
